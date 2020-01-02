@@ -16,5 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/contato', function () {
- return 'My Contacts';
+ return view('site.contato');
 });
