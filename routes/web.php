@@ -11,6 +11,12 @@
 |
 */
 
+# rota que aceita somente os métodos especificados
+Route::match(['post', 'get'], '/match', function () {
+    return 'match route';
+});
+
+# rota que aceita qualquer metodo
 Route::any('/any', function () {
     return 'rota que aceita todos os métodos http';
 });
