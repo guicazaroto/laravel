@@ -11,6 +11,10 @@
 |
 */
 
+Route::any('/any', function () {
+    return 'rota que aceita todos os métodos http';
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
