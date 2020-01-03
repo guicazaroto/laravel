@@ -11,6 +11,16 @@
 |
 */
 
+# passando parametros via url
+Route::get('/category/{flag}',function($flag) {
+    return "Produtos da categoria {$flag}";
+});
+
+# tornando parametros opicionais
+Route::get('/tag/{flag?}',function($tag = 'indefinida') {
+    return "A flag é {$tag}";
+});
+
 # rota que aceita somente os métodos especificados
 Route::match(['post', 'get'], '/match', function () {
     return 'match route';
