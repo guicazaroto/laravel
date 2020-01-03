@@ -11,6 +11,20 @@
 |
 */
 
+Route::get('/route-name', function () {
+    return 'new name route';
+})->name('new-name');
+
+Route::get('/use-name',function () {
+    return redirect()->route('new-name');
+});
+
+# redirecionamento de rotas
+Route::redirect('/redirect1', '/redirect2');
+Route::get('/redirect2', function () {
+    return 'redirect 2';
+});
+
 # passando parametros via url
 Route::get('/category/{flag}',function($flag) {
     return "Produtos da categoria {$flag}";
