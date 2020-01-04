@@ -15,21 +15,32 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+# grupos de rotas em prefixos
+# dessa forma todas as rotas terão que derivar da rota '/dashboard/'
+Route::prefix('dashboard')->group(function () {
 
-# Dessa forma garantimos que todas as rotas do grupo passarão pelo middleware auth
-Route::middleware(['auth'])->group(function () {
-    Route::get('/hello', function () {
-        return 'Hello';
-    });
+    #chamando metodos em controllers
+    Route::get('/', 'AdminController@test');
 
-    Route::get('/world', function () {
-        return 'world';
+    Route::get('/settings', function () {
+        return 'Configurações do dashboar';
     });
 });
 
-Route::get('/login', function () {
-    return 'Página de login';
-})->name('login');
+// # Dessa forma garantimos que todas as rotas do grupo passarão pelo middleware auth
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/hello', function () {
+//         return 'Hello';
+//     });
+
+//     Route::get('/world', function () {
+//         return 'world';
+//     });
+// });
+
+// Route::get('/login', function () {
+//     return 'Página de login';
+// })->name('login');
 
 
 // Route::get('/route-name', function () {
