@@ -19,8 +19,10 @@ Route::get('/', function () {
 # dessa forma todas as rotas terão que derivar da rota '/dashboard/'
 Route::prefix('dashboard')->group(function () {
 
-    #chamando metodos em controllers
-    Route::get('/', 'AdminController@test');
+    Route::namespace('Admin')->group(function () {
+        #chamando metodos em controllers
+        Route::get('/', 'AdminController@test');
+    });
 
     Route::get('/settings', function () {
         return 'Configurações do dashboar';
