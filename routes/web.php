@@ -15,13 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group([
-    'middleware' => [],
-    'prefix' => 'admin',
-    'namespace' => 'Admin',
-    'name' => 'admin.'
-], function () {
-   Route::get('/', 'AdminController@test')->name('home'); //this the 'admin.home'
+Route::group(
+    [
+        'middleware' => [],
+        'prefix' => 'admin',
+        'namespace' => 'Admin',
+        'name' => 'admin.'
+    ], 
+function () {
+   Route::get('/', 'AdminController@test')
+    ->name('home'); //this the 'admin.home'
 });
 
 
