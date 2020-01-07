@@ -10,6 +10,10 @@ class ProductController extends Controller
     {
         # adiciona middleware de login apenas para as rotas CREATE e SHOW
         $this->middleware('auth')->only(['create', 'show']);
+
+        # também podemos utilizar o expect
+        //$this->middleware('auth')->except(['create', 'show']);
+
     }
     /**
      * Display a listing of the resource.
