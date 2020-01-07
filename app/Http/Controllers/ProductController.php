@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        # adiciona middleware de login apenas para as rotas CREATE e SHOW
+        $this->middleware('auth')->only(['create', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *

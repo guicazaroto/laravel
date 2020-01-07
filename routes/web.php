@@ -14,7 +14,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 # Definindo o resource obtemos rotas para todos os metodos Http's
-Route::resource('products', 'ProductController')->middleware('auth');
+Route::resource('products', 'ProductController');
 
 Route::get('/login', function () {
     return 'Página de login';
