@@ -22,7 +22,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return 'listagem de produtos';
+        $name = 'Guilherme Cazaroto';
+        return view('teste', compact('name'));
     }
 
     /**

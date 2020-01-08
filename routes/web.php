@@ -13,13 +13,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
-# Definindo o resource obtemos rotas para todos os metodos Http's
-Route::resource('products', 'ProductController');
 
-Route::get('/login', function () {
-    return 'Página de login';
-})->name('login');
+Route::get('/post/{id}', 'PostController@show');
 
+// # Definindo o resource obtemos rotas para todos os metodos Http's
+// Route::resource('products', 'ProductController');
+
+// Route::get('/login', function () {
+//     return 'Página de login';
+// })->name('login');
 
 /*
 Route::get('/products', 'ProductController@index')->name('products.index');
