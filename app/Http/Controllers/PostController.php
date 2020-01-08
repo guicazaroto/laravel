@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use App\Models\Post;
 class PostController extends Controller
 {
     public function show ($slug) {
         //return "This is my post {$slug}";
 
-        $post = DB::table('posts')->where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->first();
 
         if(!$post) abort(404);
 
