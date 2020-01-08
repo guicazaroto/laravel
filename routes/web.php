@@ -14,7 +14,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post/{id}', 'PostController@show');
+Route::get('/post/{slug}', 'PostController@show');
 
 // # Definindo o resource obtemos rotas para todos os metodos Http's
 // Route::resource('products', 'ProductController');
