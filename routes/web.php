@@ -14,6 +14,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/vue', function () {
+    return view('vue');
+});
+
 Route::get('/about', function () {
     $articles = App\Article::take(3)->latest()->get();
     return view('about', ["articles" => $articles]);

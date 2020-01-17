@@ -1,6 +1,8 @@
-//
-$color: 'green';
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
-body {
-  background-color: $color;
-}
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
