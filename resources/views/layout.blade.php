@@ -8,7 +8,7 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link href="/css/default.css" rel="stylesheet" type="text/css" media="all" />
 <link href="/css/fonts.css" rel="stylesheet" type="text/css" media="all" />
-
+@yield('head')
 <!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
 
 </head>
@@ -23,8 +23,8 @@
                 <li class="{{ Request::path() == '/' ? 'current_page_item' : '' }}">
                     <a href="/" accesskey="1" title="">Homepage</a>
                 </li>
-                <li class="{{ Request::path() == 'clients' ? 'current_page_item' : '' }}">
-                    <a href="#" accesskey="2" title="">Our Clients</a>
+                <li class="{{ Request::path() == 'articles/create' ? 'current_page_item' : '' }}">
+                    <a href="/articles/create" accesskey="2" title="">New Article</a>
                 </li>
                 <li class="{{ Request::path() == 'about' ? 'current_page_item' : '' }}">
                     <a href="/about" accesskey="3" title="">About Us</a>

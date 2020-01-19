@@ -20,4 +20,6 @@ Route::get('/about', function () {
 });
 
 Route::get('/articles', 'ArticleController@index');
+Route::post('/articles', 'ArticleController@store');
+Route::get('/articles/create', 'ArticleController@create');
 Route::get('/articles/{id}', 'ArticleController@show');
