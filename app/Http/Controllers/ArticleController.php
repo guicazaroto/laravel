@@ -20,12 +20,19 @@ class ArticleController extends Controller
         return view('articles.show', ['article' => $article]);
     }
 
-    public function create() {
+    public function create() 
+    {
         return view('articles.create');
     }
 
     public function store()
     {
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = new Article();
         $article->title = request('title');
         $article->excerpt = request('excerpt');
@@ -36,12 +43,20 @@ class ArticleController extends Controller
 
     }
 
-    public function edit ($id) {
+    public function edit ($id) 
+    {
         $article = Article::find($id);
         return view('articles.edit', compact('article'));
     }
 
-    public function update($id) {
+    public function update($id) 
+    {
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = Article::find($id);
         $article->title = request('title');
         $article->excerpt = request('excerpt');
