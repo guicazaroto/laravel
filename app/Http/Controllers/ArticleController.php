@@ -29,15 +29,9 @@ class ArticleController extends Controller
 
     public function store()
     {     
-        Article::create(
-            request()->validate([
-                'title' => 'required',
-                'excerpt' => 'required',
-                'body' => 'required'
-            ])
-        );    
+        Article::create($this->validateFields());    
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     public function edit (Article $article) 
@@ -47,16 +41,16 @@ class ArticleController extends Controller
 
     public function update(Article $article) 
     {
-        $article->update(
-            request()->validate([
-                'title' => 'required',
-                'excerpt' => 'required',
-                'body' => 'required'
-            ])
-        );
+        $article->update($this->validateFields());
+        return redirect(route('articles.show', $article));
+    }
 
-
-        return redirect('/articles/' . $article->id );
+    public function validateFields () {
+        return request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 
 }

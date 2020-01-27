@@ -18,4 +18,8 @@ class Article extends Model
     */
 
     protected $fillable = ['title', 'excerpt', 'body'];
+
+    public function path() {
+        return request()->path();
+    }
 }
