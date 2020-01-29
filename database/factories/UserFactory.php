@@ -26,3 +26,7 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+// How to use
+// php artisan tinker
+// Factory(App\Models\User::class)->create()  // args (Model, Amount to be create)
