@@ -33,7 +33,7 @@ class Article extends Model
 
     public function tags () {
         # When tags has many articles and articles has many tags
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class)->withTimestamps();
     }
 }
 
